@@ -1,0 +1,43 @@
+
+
+/* 1 punkt */
+div{
+    width: 600px;
+    height: 600px;
+    background-color: gold;
+    margin: auto;
+    padding: auto;
+}
+
+
+
+/* 2 punkty */
+section div{
+    background-color: tomato;
+}
+
+/* 3 punkty */
+body section div{
+    background-color: rgb(0, 149, 255);
+}
+
+
+/* 10 punktów */
+.a{
+    background-color: lime;
+}
+
+/* 11 punktów */
+div.a{
+    background-color: floralwhite;
+}
+
+/* 100 punktów */
+#b {
+    background-color: purple;
+}
+
+/* 10 000 punktów wymusza wszystko */
+.c{
+    background-color: coral !important;
+}

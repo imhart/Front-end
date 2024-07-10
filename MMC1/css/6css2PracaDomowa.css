@@ -1,0 +1,41 @@
+body {
+	background-color: #333;
+	color: #fff;
+	font-size: 36px;
+	font-family: 'Comfortaa', sans-serif;
+}
+
+.foto {
+	text-align: center;
+	display: block;
+	margin: 0 auto;
+	height: 300px;
+	border: 2px solid #fff;
+	border-radius: 30px;
+	filter: blur(2px);
+    margin-bottom: 50px;
+}
+
+/* .foto2 {
+	margin-left: 800px;
+	margin-top: 20px;
+	margin-bottom: 50px;
+} */
+
+.lorem {
+	color: tomato;
+}
+
+.lorem2 {
+	color: greenyellow;
+	/* transition: 1s; */
+}
+
+/* .lorem2:hover {
+    transform: rotate(180deg);
+} */
+
+.lorem3 {
+	color: rgb(57, 110, 255);
+	text-decoration: underline;
+}

@@ -1,0 +1,49 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	padding: 40px;
+	background-color: royalblue;
+	font-family: sans-serif;
+	color: #fff;
+}
+
+h1 {
+	font-size: 54px;
+	text-transform: uppercase;
+}
+
+.p {
+	margin-top: 20px;
+	padding: 20px 10px;
+	font-size: 48px;
+	background-color: lime;
+}
+
+/* p {
+	font-size: 80px;
+}
+
+div {
+	font-size: 80px;
+}
+
+span {
+	font-size: 80px;
+} */
+
+/* div, p, span{
+	font-size: 80px;
+	background-color: tomato;
+}
+
+div p span{
+	font-size: 80px;
+	background-color: gold;
+} */
+
+.text {
+	font-size: 60px !important;
+}

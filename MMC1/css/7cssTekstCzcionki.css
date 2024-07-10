@@ -1,0 +1,120 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	margin: 20px;
+	font-size: 36px;
+	height: 4000px;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: rgb(48, 100, 255);
+	color: white;
+}
+
+.p {
+	color: gold;
+	text-align: center;
+}
+
+.small {
+	text-transform: uppercase;
+}
+
+.big {
+	text-transform: lowercase;
+}
+
+.text1 {
+	color: goldenrod;
+	/* text-align: left; */
+	/* text-align: right; */
+	text-align: center;
+	/* text-align: justify; */
+}
+
+.text2 {
+	text-transform: capitalize;
+}
+
+.text3 {
+	letter-spacing: 20px;
+}
+
+.text4 {
+	word-spacing: 100px;
+}
+
+.text5 {
+	line-height: 200px;
+}
+
+.text6 {
+	margin-top: 40px;
+	margin-bottom: 30px;
+	background-color: gold;
+	color: #000000;
+	text-align: center;
+	height: 300px;
+	line-height: 300px;
+}
+
+.text7 {
+	color: gold;
+	text-shadow: 5px 5px 5px #000000;
+}
+
+.google {
+	color: wheat;
+	text-decoration: none;
+}
+
+.color {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.color1 {
+	width: 500px;
+	height: 500px;
+	background-color: #ffd900;
+}
+
+.img1 {
+	margin-top: 30px;
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	opacity: 0.8;
+	filter: blur(3px);
+	filter: invert(100%);
+}
+
+.img2 {
+	width: 500px;
+	height: 500px;
+	background-image: url(c.jpg);
+}
+
+.google2 {
+	color: wheat;
+	text-decoration: overline;
+}
+.google3 {
+	color: wheat;
+	text-decoration: underline;
+}
+.google4 {
+	color: wheat;
+	text-decoration: dashed;
+}
+.google5 {
+	color: wheat;
+	text-decoration: solid;
+}
+.google6 {
+	color: wheat;
+	text-decoration: line-through;
+}

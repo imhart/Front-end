@@ -1,0 +1,29 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin-top: 60px;
+	margin-left: 60px;
+	font-size: 22px;
+	height: 300vh;
+	font-family: 'Montserrat', sans-serif;
+	background-color: #045de9;
+	background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+}
+
+div {
+	size: 19px;
+	background-color: lime;
+}
+
+p {
+	background-color: gold;
+	size: 40px;
+}
+
+span {
+	background-color: tomato;
+}

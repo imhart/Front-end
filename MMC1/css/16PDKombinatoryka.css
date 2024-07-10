@@ -1,0 +1,45 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	margin: 30px 10px 0px 30px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: wheat;
+	background-color: #333;
+}
+
+html {
+	font-size: 36px;
+}
+
+div > p {
+	color: red;
+}
+
+.child {
+	color: red;
+}
+
+.child > p {
+	font-weight: bold;
+	text-decoration: line-through;
+}
+
+div > div {
+	background-color: blue;
+}
+
+main + p {
+	text-transform: uppercase;
+}
+
+#test2 + div {
+    color: #ff00ea;
+}
+
+
+
+
