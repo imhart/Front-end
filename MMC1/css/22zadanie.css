@@ -5,16 +5,17 @@
 }
 
 body {
-	font-family: 'Montserrat', sans-serif;
+	/* font-family: 'Montserrat', sans-serif; */
 	background-color: #333;
 	font-size: 36px;
-	color: #fff;
+	color: #000000;
 }
 
 .bg {
+	font-family: 'Nunito', sans-serif;
 	width: 100vw;
-	height: 100vh;
-	background-color: #ddd;
+	height: 500vh;
+	background-color: rgb(190, 190, 190);
 	transition: 0.5s;
 }
 
@@ -56,4 +57,286 @@ body {
 }
 .gold:hover ~ .bg {
 	background-color: gold;
+}
+
+.button {
+	font-family: 'Nunito', sans-serif;
+}
+
+.btn-zoom {
+	cursor: pointer;
+	text-transform: uppercase;
+	width: 120px;
+	border: 3px solid #000000;
+	border-radius: 5px;
+	padding: 10px 30px;
+	letter-spacing: 2px;
+	background: none;
+	transform: translateX(-50%);
+	position: absolute;
+	top: 200px;
+	left: 20%;
+}
+.btn-zoom:hover {
+	border: 3px solid white;
+	background: black;
+	color: white;
+	transition: 0.5s;
+}
+
+.btn-move {
+	cursor: pointer;
+	text-transform: uppercase;
+	width: 120px;
+	border: 3px solid #000000;
+	border-radius: 5px;
+	padding: 10px 30px;
+	letter-spacing: 2px;
+	background: none;
+	width: 120px;
+	position: absolute;
+	top: 200px;
+	left: 40%;
+}
+.btn-move:hover {
+	border: 3px solid white;
+	background: black;
+	color: white;
+	transition: 0.5s;
+}
+
+.btn-color {
+	cursor: pointer;
+	text-transform: uppercase;
+	width: 120px;
+	border: 3px solid #000000;
+	border-radius: 5px;
+	padding: 10px 30px;
+	letter-spacing: 2px;
+	background: none;
+	width: 120px;
+	position: absolute;
+	top: 200px;
+	left: 70%;
+}
+.btn-color:hover {
+	border: 3px solid white;
+	background: black;
+	color: white;
+	transition: 0.5s;
+}
+
+.square-baner {
+	background-color: blue;
+	width: 100px;
+	height: 100px;
+	transition: 1s;
+}
+
+.blue-baner {
+	transform: translateX(-50%);
+	border: 5px solid #395aff;
+	border-radius: 20%;
+	background-color: royalblue;
+	box-shadow: 0 2px 15px rgb(25, 48, 255);
+	position: absolute;
+	left: 20%;
+}
+.red-baner {
+	transform: translateX(-50%);
+	border: 5px solid #fc6060;
+	border-radius: 20%;
+	background-color: rgb(255, 105, 79);
+	box-shadow: 0 2px 15px rgb(252, 25, 25);
+	position: absolute;
+	left: 49%;
+}
+
+.green-baner {
+	transform: translateX(-50%);
+	border-radius: 20%;
+	border: 5px solid #a1e92f;
+	background-color: greenyellow;
+	box-shadow: 0 3px 15px rgb(100, 193, 19);
+	position: absolute;
+	left: 78%;
+}
+
+.btn-zoom:hover ~ .square-baner {
+	width: 200px;
+	height: 200px;
+}
+
+.btn-move:hover ~ .square-baner {
+	margin-top: 100px;
+}
+
+.btn-color:hover ~ .square-baner {
+	border: 5px solid #000000;
+	border-radius: 20%;
+	background-color: rgb(69, 69, 69);
+	box-shadow: 0 2px 15px rgb(0, 0, 0);
+}
+
+.btn-circle {
+	cursor: pointer;
+	text-transform: uppercase;
+	width: 120px;
+	border: 3px solid #000000;
+	border-radius: 5px;
+	padding: 10px 30px;
+	letter-spacing: 2px;
+	background: none;
+	width: 120px;
+	position: absolute;
+	top: 550px;
+	left: 40%;
+}
+
+.circle-shadow {
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	box-shadow: 60px 20px 0px 0px #fc6060;
+	background-color: #395aff;
+	position: absolute;
+	left: 56%;
+	top: 91%;
+}
+.circle {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	box-shadow: -20px 0 30px 30px #fc6060;
+	border: 5px solid #fc6060;
+	background-color: rgb(255, 48, 117);
+	position: absolute;
+	left: 20%;
+
+	transition: 2s cubic-bezier(0.58, 1.16, 0, -0.3);
+}
+.btn-circle:hover ~ .circle {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	left: 60%;
+	box-shadow: 0px 0 30px 30px #fc6060;
+}
+
+.circle2 {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	box-shadow: -20px 0 30px 30px #fc6060;
+	border: 5px solid #fc6060;
+	background-color: rgb(255, 48, 117);
+	margin-top: 300px;
+	transition: 2s;
+	position: absolute;
+	left: 20%;
+}
+.btn-circle:hover ~ .circle2 {
+	background-color: rgb(190, 190, 190);
+	border: none;
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	box-shadow: 60px 20px 0px 0px #fc6060;
+	position: absolute;
+	left: 55%;
+}
+
+.transition {
+	color: azure;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: ;
+	text-transform: uppercase;
+	font-size: 15px;
+	background-color: rebeccapurple;
+	border: 5px solid #6b0da9;
+	border-radius: 5px;
+	box-shadow: -2px 4px 10px 0px #9f19f8;
+	width: 200px;
+	height: 50px;
+	margin: 20px 0 0 100px;
+	transition: width 1s, height 1s, padding-top 1s;
+	float: inherit;
+}
+.m1 {
+	/* background-color: rebeccapurple;
+    border: 5px solid #6b0da9;
+    border-radius: 5px;
+    box-shadow: -2px 4px 10px 0px #9f19f8;
+    width: 200px;
+    height: 50px; */
+	margin: 400px 0 0 100px;
+	/* float: inherit; */
+}
+
+
+
+
+.m2 {
+	margin: 200px 0 0 100px;
+
+}
+.transition:hover {
+	width: 600px;
+	height: 100px;
+	padding-top: 40px;
+}
+
+.LINEAR {
+	transition: 3s linear;
+}
+.EASE {
+	transition: 3s 1s ease;
+}
+.EASE-IN {
+	transition: 3s ease-in;
+}
+.EASE-OUT {
+	transition: 3s ease-out;
+}
+.EASE-IN-OUT {
+	transition: 3s ease-in-out;
+}
+.CUBIC-BEZIER {
+	transition: 3s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+}
+
+
+
+
+.LINEAR:hover{
+	width: 600px;
+	height: 60px;
+	padding-top: 20px;
+}
+
+.LINEAR:hover ~ .EASE {
+	width: 600px;
+	height: 60px;
+	padding-top: 20px;
+}
+.LINEAR:hover ~ .EASE-IN {
+	width: 600px;
+	height: 60px;
+	padding-top: 20px;
+}
+.LINEAR:hover ~ .EASE-OUT {
+	width: 600px;
+	height: 60px;
+	padding-top: 20px;
+}
+.LINEAR:hover ~ .EASE-IN-OUT {
+	width: 600px;
+	height: 60px;
+	padding-top: 20px;
+}
+.LINEAR:hover ~ .CUBIC-BEZIER {
+	width: 600px;
+	height: 60px;
+	padding-top: 20px;
 }
