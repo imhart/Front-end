@@ -1,0 +1,108 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --gray: #717575;
+    --blue: #008cff;
+    --black: #000000;
+    --red: #ff0000;
+}
+
+body{
+    background-color: var(--gray);
+}
+
+.border{
+    border-radius: 10px;
+    border: 2px solid var(--black) ;
+}
+
+.long{
+    width: 800px;
+    height: 60px;
+    background-color: var(--red);
+    position: relative;
+    top: calc(50px);
+    left: calc(50px);
+    transition: 1s;
+}
+.long:hover{
+    transform: scale(2);
+    width: 300px;
+    position: relative;
+    top: calc(50px);
+    left: calc(50px + 20%);
+}
+.s{
+    width: 300px;
+    height: 60px;
+}
+.short{
+    background-color: var(--blue);
+    transition: 1s linear;
+    position: absolute;
+    top: 160px;
+    left: calc(50% - 150px);
+
+}
+.short:hover{
+    transform: rotate(360deg);
+}
+.short:hover ~ .short2{
+    transform: rotate(360deg);
+}
+.short:hover ~ .short3{
+    transform: rotate(-360deg);
+}
+
+.short2{
+    background-color: #f2ff00;
+    transition: 1s ease-out;
+    position: absolute;
+    top: 300px;
+    left: calc(25% - 150px);
+}
+
+.short3{
+    background-color: #ff00f2;
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    position: absolute;
+    top: 300px;
+    left: calc(75% - 150px);
+}
+
+.center{
+    width: 400px;
+    height: 200px;
+    text-align: center;
+    padding-top: 90px;
+    background-color: var(--black);
+    color: white;
+    transform: translate(50%, 200%);
+}
+
+.center:hover{
+    color: var(--black);
+    background-color: #fff;
+}
+
+
+
+
+
+
+
+
+
+/* justify-content: center;  Wyśrodkowanie poziome 
+align-items: center; Wyśrodkowanie pionowe */
+
+
+
+
+
+
+
+
