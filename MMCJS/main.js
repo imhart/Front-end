@@ -149,7 +149,7 @@ console.log(text7.split(','))
 
 
 
-// MATERIAŁ I ODCINEJ Z TYPEM NUMBER
+// MATERIAŁ I ODCINEJ Z TYPEM table_of_elements
 
 const num1 = 23.12
 const num2 = "2"
@@ -498,7 +498,7 @@ z6x >= 100 ? console.log(' x >= 100') : z6x > 30 ? console.log('x jest średniak
 
 if (z6x >= 100) {
     console.log('x > 100')
-} else if (z6x <100 && z6x > 30) {
+} else if (z6x < 100 && z6x > 30) {
     console.log('x jest średniakiem')
 } else if (z6x <= 30) {
     console.log('jest mały')
@@ -511,34 +511,232 @@ if (z6x >= 100) {
 
 // MATERIAŁ I ODCINEJ Z Instrukcje  Pętle For
 
-console.log(' ');
+console.log('');
+console.log('Pętle For ');
 
 for (let i = 0; i <= 6; i++) {
     console.log(i);
 }
 
-const animels = ['🥷','🦬','🫓','🪆']
+const animels = ['🥷', '🦬', '🫓', '🪆']
 console.log(' ')
 console.log(animels[3])
 
 console.log(' ')
-for (let n = 0; n < 6; n++){
+for (let n = 0; n < 6; n++) {
     console.log(animels[n]);
 }
 
 
 console.log(' ')
-for (let n = 0; n < animels.length; n++){
+for (let n = 0; n < animels.length; n++) {
     console.log(animels[n]);
 }
 
 console.log(' ')
-const color4 = ['🟠','🟡', '🟢', '🟣', '🟤'];
+const color4 = ['🟠', '🟡', '🟢', '🟣', '🟤'];
 for (let m = 0; m < color4.length; m++) {
-    console.log(color4[m])   
+    console.log(color4[m])
 }
+
+
+
+
 
 // MATERIAŁ I ODCINEJ Z Instrukcje  Pętle While
+// nie możemy lisać leta wśrodku pentli while
+console.log('Pętle While ')
+
+let kotki = 0;
+while (kotki < 6) {
+    console.log(kotki)
+    kotki++
+}
+
+// MATERIAŁ I ODCINEJ Z Instrukcje  Pętle do ...while
+console.log('Pętle do ...while ')
+let k = 0;
+
+do {
+    k++
+    console.log(k)
+} while (k < 6)
+
+// MATERIAŁ I ODCINEJ Z Instrukcje  Pętle For of
+console.log('Pętle For of ')
+
+const table_of_elements = [1, 2, 3, 4, 5, 10]
+
+for (const element of table_of_elements) {
+    console.log(table_of_elements);
+    console.log(typeof (table_of_elements))
+}
+
+console.log(' ')
+for (const element of table_of_elements) {
+    console.log(element);
+}
+
+
+console.log(' ')
+for (const element of table_of_elements) {
+    console.log(element * 3);
+}
+console.log(' ')
+
+
+// MATERIAŁ I ODCINEJ Z Instrukcje  for each
+table_of_elements.forEach(element => {
+    console.log(element);
+});
+
+
+
+// zadanie 1 z for
+console.log(' ')
+console.log('     zadanie 1 z for')
+
+const cities = ['Olsztyn', 'Olsztynek', 'Poznań'];
+for (let j = 0; j < cities.length; j++) {
+    console.log(`to misto nazywa się : ${cities[j].toUpperCase()}`);
+}
+for (let j = 0; j < cities.length; j++) {
+    console.log(`to misto nazywa się : ${cities}`);
+}
+console.log(' ')
+
+const furniture = ['desk', 'chair', 'dresser']
+for (let h = 0; h < furniture.length; h++) {
+    console.log(`takie są meble w domu: ${furniture}`)
+}
+for (let h = 0; h < furniture.length; h++) {
+    console.log(`takie są meble w domu: ${furniture[h].toUpperCase()}`)
+}
+
+// const color4 = ['🟠', '🟡', '🟢', '🟣', '🟤'];
+// for (let m = 0; m < color4.length; m++) {
+//     console.log(color4[m])
+// }
+
+
+
+// zadanie 2 z for
+console.log(' ')
+
+console.log('     zadanie 2 z While')
+
+let g = 0;
+
+while (g < 10) {
+    g += 2
+    console.log(g);
+}
+
+console.log('     zadanie 3 z do...While')
+let f = 20
+
+do {
+    f = f - 3
+    console.log(f)
+} while (f > 0)
+
+console.log('     zadanie 3 z do...While')
+
+// Zapisuje nam wartość całęgo f i dlatego ma już przypisaną wartość -3 po pierwszej pętli 
+do {
+    f = f - 3
+} while (f > - 5)
+console.log(f)
+
+
+
+
+console.log('     zadanie 4 z for of')
+
+let tabel_number = [5, 8, 10, 23, 48, 60, 65]
+console.log(tabel_number)
+
+for (let tabel_number_test = 0; tabel_number_test < tabel_number.length; tabel_number_test++) {
+    console.log(`licza ${tabel_number[tabel_number_test] / 5}`)
+}
+console.log(' --------------')
+
+
+
+
+let tabel_number2 = [5, 8, 10, 23, 48, 60, 65]
+
+
+for (let tabel_number_test2 of tabel_number2) {
+    if (tabel_number_test2 % 2 === 0) {
+        console.log(`%clicza ${tabel_number_test2} jest parzyste`, `background-color:Violet; color:black; padding:10px`)
+    } else {
+        console.log(`%clicza ${tabel_number_test2} NIE jest parzyste`, 'background-color:DodgerBlue; color:black; padding: 10px;')
+
+    }
+}
+
+
+
+// gówno jebane, ciężkie do połapania
+// Wypisywanie wszystkich liczb z tablicy i sprawdzanie czy jest liczna parzysta, czy nie parzysta i koloruje na różne kolory
+for (let tabel_number_test3 of tabel_number2) {
+    if (tabel_number_test3 % 2 === 0) {
+        console.log(`%cliczba ${tabel_number_test3} jest parzysta`, `background-color: Aquamarine; color:black; padding:10px`)
+    } else {
+        console.log(`%cliczba ${tabel_number_test3} NIE jest parzysta`, `background-color: Aqua; color:black; padding:5px`)
+    }
+}
+
+
+
+
+// MATERIAŁ I ODCINEJ Z Instrukcje  TABLICE
+
+const tabel_course = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+// const bt1 = document.querySelector('button:nth-of-type(1)')
+// const bt2 = document.querySelector('button:nth-of-type(2)')
+// const bt3 = document.querySelector('button:nth-of-type(3)')
+
+// console.log(bt1, bt2, bt3);
+
+
+// function btnMsg(e) {
+    //     console.log(`kliknięto ${e.target.textContent} ! 😃😃😃😃`)
+    // }
+    
+    // bt1.addEventListener('click', btnMsg )
+    // bt2.addEventListener('click', btnMsg )
+    // bt3.addEventListener('click', btnMsg )
+    
+    
+    
+    // Stworzyliśmy obiekt tablico podobnt dla przycisków
+    // pobiera wszystkie przyciski ze strony 
+    const btn = document.querySelectorAll('button')
+    console.log(btn);
+    
+    
+    // wypisywanie wiadomości i wyczytywanie zawartości z przycisku
+    function btnMeesage(e) {
+        console.log(`kliknięto ${e.target.textContent} ! 😃😃😃😃`);
+    }
+    
+    // Pętla for each przejdzie po całej tablicy i wykona pewien kod
+    btn.forEach(btnf => btnf.addEventListener('click', btnMeesage))
+    
+    
+    
+    
+    // MATERIAŁ I ODCINEJ Z  TABLICAMI (Array)  metody na tablicach
+
+
+
+
+
+
+
 
 
 
