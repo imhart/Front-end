@@ -693,8 +693,17 @@ for (let tabel_number_test3 of tabel_number2) {
 
 // MATERIAŁ I ODCINEJ Z Instrukcje  TABLICE
 
-const tabel_course = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
+
+let tabel_course = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+
+
+
+console.log('')
+console.log('')
+console.log(' ZACZYNAMY TABLICE ')
+console.log('')
 // const bt1 = document.querySelector('button:nth-of-type(1)')
 // const bt2 = document.querySelector('button:nth-of-type(2)')
 // const bt3 = document.querySelector('button:nth-of-type(3)')
@@ -703,33 +712,241 @@ const tabel_course = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 
 // function btnMsg(e) {
-    //     console.log(`kliknięto ${e.target.textContent} ! 😃😃😃😃`)
-    // }
-    
-    // bt1.addEventListener('click', btnMsg )
-    // bt2.addEventListener('click', btnMsg )
-    // bt3.addEventListener('click', btnMsg )
-    
-    
-    
-    // Stworzyliśmy obiekt tablico podobnt dla przycisków
-    // pobiera wszystkie przyciski ze strony 
-    const btn = document.querySelectorAll('button')
-    console.log(btn);
-    
-    
-    // wypisywanie wiadomości i wyczytywanie zawartości z przycisku
-    function btnMeesage(e) {
-        console.log(`kliknięto ${e.target.textContent} ! 😃😃😃😃`);
-    }
-    
-    // Pętla for each przejdzie po całej tablicy i wykona pewien kod
-    btn.forEach(btnf => btnf.addEventListener('click', btnMeesage))
-    
-    
-    
-    
-    // MATERIAŁ I ODCINEJ Z  TABLICAMI (Array)  metody na tablicach
+//     console.log(`kliknięto ${e.target.textContent} ! 😃😃😃😃`)
+// }
+
+// bt1.addEventListener('click', btnMsg )
+// bt2.addEventListener('click', btnMsg )
+// bt3.addEventListener('click', btnMsg )
+
+
+
+// Stworzyliśmy obiekt tablico podobnt dla przycisków
+// pobiera wszystkie przyciski ze strony 
+const btn = document.querySelectorAll('button')
+console.log(btn);
+
+
+// wypisywanie wiadomości i wyczytywanie zawartości z przycisku
+function btnMeesage(element) {
+    element.style.color = "red";
+    element.style.backgroundColor = "blue";
+    console.log(`kliknięto ${element.textContent} ! 😃😃😃😃`);
+}
+
+// Pętla for each przejdzie po całej tablicy i wykona pewien kod
+// addEventListener nasłuchuje i obserwuje akcji na konkretnym elemencie, który wskazałem. 
+btn.forEach(btnf => btnf.addEventListener('click', ()=> {
+    btn.forEach(element =>{
+        element.style.color = ""
+        element.style.backgroundColor = ""
+    })
+    btnMeesage(btnf)
+    console.log(btnf)
+}))
+
+
+
+
+// MATERIAŁ I ODCINEJ Z  TABLICAMI (Array)  metody na tablicach
+
+console.log(tabel_course);
+
+// metoda unshift dodaje nam elementy na początku tablicy
+tabel_course.unshift(10, 20)
+console.log(tabel_course);
+
+
+// metoda shift usuwa nam element na początku tablicy, nasz pierwszy element z index 0
+tabel_course.shift()
+tabel_course.shift()
+console.log(tabel_course);
+
+// metoda push dodaje nam element na końcu tablicy
+tabel_course.push(11, 12)
+console.log(tabel_course);
+
+// element pop usuwa nam element na końcu tabeli
+tabel_course.pop()
+console.log(tabel_course);
+
+// funkcja mnożąca razy 3
+function function_table_curse(x) {
+    return x * 2
+    // console.log(x * 3)
+}
+
+// to jest mnożnik funcki function_table_curse
+function_table_curse(2)
+
+
+// wykonuje zapisaną fukcję na każdego lelmentu podanej tablicy
+// w nawiasach wpisujemy funkcję, która ma się wykonać
+// zwraca nam nową tablicę
+let new_tabel_course = tabel_course.map(function_table_curse);
+console.log('');
+console.log('map()');
+console.log('');
+console.log(tabel_course);
+console.log(new_tabel_course);
+console.log(tabel_course);
+console.log('');
+
+
+
+tabel_course.push(22,33,44)
+console.log(tabel_course);
+
+// nie destrukcjyjne łączenie 2 table w nową  i można dodawać pojedyńce wartości
+let table_abc = ['a', 'b', 'c']
+const new_abc = tabel_course.concat(12 ,table_abc)
+
+console.log(new_abc)
+
+
+
+//   spread & rest operator
+// zapisujemy go tak ...
+// rozkładamy naszą tablicę na odzienne stringi (w tym przyadku 3)
+// wyciągamy z nich wartości 
+console.log('')
+console.log('spread & rest operator')
+console.log(table_abc);
+console.log(...table_abc)
+
+// rozsmarowowuje tabelę i łączy jes jako oddzielne elementy 
+const spread_abc = [table_abc, 'łączę' , tabel_course]
+const spread_abcv1 = [...table_abc, 'łączę' , ...tabel_course]
+console.log(spread_abc)
+console.log(spread_abcv1)
+
+
+
+// reverse
+// metoda reverse odwracająca całą tablicę 
+console.log("")
+console.log('metoda reverse odwraca całą tablicę')
+
+const array_1 = [1,2,3,4,5,'a'];
+console.log(array_1);
+array_1.reverse()``
+console.log(array_1); // [5,4,3,2,1]
+
+
+// indexOf( )
+// Zwraca indeks wyszukiwanego elementu w tablicy lub -1, jeśli nie ma tego indexu.
+console.log(' '); 
+console.log('indexOf( )'); 
+
+console.log(array_1.indexOf('a')); 
+console.log(array_1.indexOf(5)); 
+console.log(array_1.indexOf(4)); 
+
+// includes( )
+// Zwraca na informację true, albo false i sprawdza czy jest ten elenent w tablicy, czy jego nie mamy
+console.log(' '); 
+console.log('includes( )'); 
+console.log(array_1)
+console.log(array_1['a'])
+console.log(array_1.includes(0)); 
+console.log(array_1.includes(1)); 
+console.log(array_1.includes('a')); 
+
+
+
+// Tworzy nową tablicę z wynikami wywołania podanej funkcji dla każdego elementu.
+// for Each nie zwraca nam nic , a map zwraca nam nową tablicę 
+console.log('')
+console.log('map()')
+console.log('Tworzy nową tablicę z wynikami wywołania podanej funkcji dla każdego elementu.')
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log(arr)
+console.log(arr.map(item => item * 5)); // [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+
+// Zapisywanie stałej dla item map
+const map_test = arr.map(item_map => item_map * 3)
+console.log(map_test)
+
+console.log(arr.map(item_map => item_map * 10))
+
+
+arr.forEach(item_map => {
+    console.log(item_map * 10)
+})
+
+console.log(' ')
+
+
+
+
+
+
+
+
+// MATERIAŁ I ODCINEJ Z  TABLICAMI (Array) zadanie metody na tablicach
+
+const array_task1_numbers = [0, 0, 1, 1, 2, 2, 2]
+const array_task1_color = ['red', 'green', 'blue', true, 123]
+const array_task1_cars = [123, true, 'audi', 'bmw', 'mercedes', 'ferrari', '🤷‍♂️', '👀']
+
+console.log('ZADANIE Z TABLIC 1 i metoda slice ')
+console.log('usuwam 2 pierwsze elementy tablei ')
+console.log(array_task1_numbers.slice(2, 7));
+console.log('zostawiam tylko 2 pierwsze elementy tabeli')
+console.log(array_task1_numbers.slice(0,2));
+console.log('wypisuję tylko 4 pierwsze elementy tabeli ')
+console.log(array_task1_numbers.slice(0, 4));
+console.log('wypisuję 3 ostatnie elementy tabeli')
+console.log(array_task1_numbers.slice(4, 7));
+console.log('zostawiam tylko 3 ostatnie elemeny tabeli')
+console.log(array_task1_numbers.slice(-3));
+
+const array_task1_cars_new = array_task1_cars.slice(2,6)
+console.log(array_task1_cars_new)
+
+
+
+console.log(' ')
+console.log('funkcja modulo i odnajdywanie liczb parzystych za pomocą filter ')
+function modulo_function(x) {
+    return x % 2 === 0
+}
+
+// filtruje nam naszą tablicę i wypisuje tylko te elemeny które spełniają nasze warunki
+// callback czyli funkcja, którą przekazujemy do innej funkcji 
+console.log(tabel_course.filter(modulo_function));
+
+
+
+
+console.log(' ')
+console.log('ZADANIE Z TABLIC 1 i metoda slice ')
+
+console.log(tabel_course)
+
+console.log('dodaję na początku a i b metodą unshift')
+tabel_course.unshift('a','b')
+console.log(tabel_course)
+
+console.log('dodaję na końcu e i f metodą push')
+tabel_course.push('e','f')
+console.log(tabel_course)
+
+
+console.log('sprawdzam "b" i wypisuje jego index i czy jest ogólnie w tablicy' )
+console.log(tabel_course.indexOf('b'))
+console.log(tabel_course.in)
+
+
+
+
+
+
+
+
+
+
+// MATERIAŁ I ODCINEJ Z  TABLICAMI (Array)  metody na tablicach
 
 
 
