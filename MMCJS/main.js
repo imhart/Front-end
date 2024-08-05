@@ -736,8 +736,8 @@ function btnMeesage(element) {
 
 // Pętla for each przejdzie po całej tablicy i wykona pewien kod
 // addEventListener nasłuchuje i obserwuje akcji na konkretnym elemencie, który wskazałem. 
-btn.forEach(btnf => btnf.addEventListener('click', ()=> {
-    btn.forEach(element =>{
+btn.forEach(btnf => btnf.addEventListener('click', () => {
+    btn.forEach(element => {
         element.style.color = ""
         element.style.backgroundColor = ""
     })
@@ -794,12 +794,12 @@ console.log('');
 
 
 
-tabel_course.push(22,33,44)
+tabel_course.push(22, 33, 44)
 console.log(tabel_course);
 
 // nie destrukcjyjne łączenie 2 table w nową  i można dodawać pojedyńce wartości
 let table_abc = ['a', 'b', 'c']
-const new_abc = tabel_course.concat(12 ,table_abc)
+const new_abc = tabel_course.concat(12, table_abc)
 
 console.log(new_abc)
 
@@ -815,8 +815,8 @@ console.log(table_abc);
 console.log(...table_abc)
 
 // rozsmarowowuje tabelę i łączy jes jako oddzielne elementy 
-const spread_abc = [table_abc, 'łączę' , tabel_course]
-const spread_abcv1 = [...table_abc, 'łączę' , ...tabel_course]
+const spread_abc = [table_abc, 'łączę', tabel_course]
+const spread_abcv1 = [...table_abc, 'łączę', ...tabel_course]
 console.log(spread_abc)
 console.log(spread_abcv1)
 
@@ -827,30 +827,30 @@ console.log(spread_abcv1)
 console.log("")
 console.log('metoda reverse odwraca całą tablicę')
 
-const array_1 = [1,2,3,4,5,'a'];
+const array_1 = [1, 2, 3, 4, 5, 'a'];
 console.log(array_1);
-array_1.reverse()``
+array_1.reverse()
 console.log(array_1); // [5,4,3,2,1]
 
 
 // indexOf( )
 // Zwraca indeks wyszukiwanego elementu w tablicy lub -1, jeśli nie ma tego indexu.
-console.log(' '); 
-console.log('indexOf( )'); 
+console.log(' ');
+console.log('indexOf( )');
 
-console.log(array_1.indexOf('a')); 
-console.log(array_1.indexOf(5)); 
-console.log(array_1.indexOf(4)); 
+console.log(array_1.indexOf('a'));
+console.log(array_1.indexOf(5));
+console.log(array_1.indexOf(4));
 
 // includes( )
 // Zwraca na informację true, albo false i sprawdza czy jest ten elenent w tablicy, czy jego nie mamy
-console.log(' '); 
-console.log('includes( )'); 
+console.log(' ');
+console.log('includes( )');
 console.log(array_1)
 console.log(array_1['a'])
-console.log(array_1.includes(0)); 
-console.log(array_1.includes(1)); 
-console.log(array_1.includes('a')); 
+console.log(array_1.includes(0));
+console.log(array_1.includes(1));
+console.log(array_1.includes('a'));
 
 
 
@@ -893,7 +893,7 @@ console.log('ZADANIE Z TABLIC 1 i metoda slice ')
 console.log('usuwam 2 pierwsze elementy tablei ')
 console.log(array_task1_numbers.slice(2, 7));
 console.log('zostawiam tylko 2 pierwsze elementy tabeli')
-console.log(array_task1_numbers.slice(0,2));
+console.log(array_task1_numbers.slice(0, 2));
 console.log('wypisuję tylko 4 pierwsze elementy tabeli ')
 console.log(array_task1_numbers.slice(0, 4));
 console.log('wypisuję 3 ostatnie elementy tabeli')
@@ -901,7 +901,7 @@ console.log(array_task1_numbers.slice(4, 7));
 console.log('zostawiam tylko 3 ostatnie elemeny tabeli')
 console.log(array_task1_numbers.slice(-3));
 
-const array_task1_cars_new = array_task1_cars.slice(2,6)
+const array_task1_cars_new = array_task1_cars.slice(2, 6)
 console.log(array_task1_cars_new)
 
 
@@ -925,17 +925,148 @@ console.log('ZADANIE Z TABLIC 1 i metoda slice ')
 console.log(tabel_course)
 
 console.log('dodaję na początku a i b metodą unshift')
-tabel_course.unshift('a','b')
+tabel_course.unshift('a', 'b')
 console.log(tabel_course)
 
 console.log('dodaję na końcu e i f metodą push')
-tabel_course.push('e','f')
+tabel_course.push('e', 'f')
 console.log(tabel_course)
 
 
-console.log('sprawdzam "b" i wypisuje jego index i czy jest ogólnie w tablicy' )
-console.log(tabel_course.indexOf('b'))
-console.log(tabel_course.in)
+console.log('sprawdzam "b" i wypisuje jego index i czy jest ogólnie w tablicy')
+console.log(tabel_course.indexOf('b'));
+// console.log(tabel_course.in)
+
+
+
+// ZADANIE Z TABLIC 2 i metoda slice
+console.log(' ')
+console.log('ZADANIE Z TABLIC 2 i concat, spread ')
+console.log(array_task1_cars)
+console.log(array_task1_color)
+const array_task1_cars_and_color = array_task1_cars.concat(array_task1_color)
+console.log(array_task1_cars_and_color)
+console.log(...array_task1_cars, ...array_task1_numbers)
+
+
+
+// ZADANIE Z TABLIC 3 i metoda slice
+
+
+// Używać for of na tablicach 
+// arr.forEach(item_map => {
+//     console.log(item_map * 10)
+// })
+// array_task1_color
+
+console.log(array_1)
+console.log(array_task1_numbers)
+
+console.log(' ')
+console.log('ZADANIE Z TABLIC 3 i metoda slice ')
+
+let new_table5 = []
+
+// tabel_number2.forEach(item_numer => {
+//     console.log(item_numer * 5)
+//     new_table5.push(item_numer * 5)
+// })
+// console.log(new_table5)
+
+// TWORZY I ZWRACA NOWĄ TABLICĘ, NIE MODYFIKUJE ORYGINALNEJ TABLICY, tWORZY SOBIE KOPIĘ
+// FOR EACH SŁUŻY DO OPERACJI NA KAŻDEJ TABLICY, ALE JEJ NIE ZAPISUJE 
+// MOŻEMY ZA POMOCĄ MAP ZMIENIAĆ STAŁĄ TABLICY  FOREACH ZMIENIAĆ 
+
+// const new_table55 = tabel_number2.forEach(item55 => item55 * 5)
+const new_table55 = tabel_number2.map(item55 => item55 * 5)
+console.log(new_table55)
+
+
+console.log(" ")
+
+for (const item5 of new_table5) {
+    if (item5 % 2 === 0) {
+        console.log(`liczba przysta:  ${item5} tego typu 😎 `)
+    } else {
+        console.log(`liczba NIE parzysta :  ${item5} tego typu 😎 `)
+    }
+}
+
+
+
+
+
+const person1 = {
+    name4: "Jason",
+    age: 25
+};
+
+console.log(Object(person1))
+console.log(Object.values(person1))
+console.log(Object.keys(person1))
+
+
+
+
+
+
+console.log(' ')
+console.log('ZADANIE Z TABLIC 4 i metoda slice ')
+
+console.log(array_task1_color)
+array_task1_color.unshift('pink')
+console.log(array_task1_color)
+array_task1_color.push('purple')
+console.log(array_task1_color)
+
+
+// usuwa elementy i można zastąpić nowy 
+// 1 element zaczynamy usuwanie i od którego elementu
+// 2 element ile elementów ma usunąć 
+// 3  co ma wstawić w to miejsce 
+
+array_task1_color.splice(4, 2, 'dark')
+console.log(array_task1_color)
+// tab[tab.length] = "Piotrek"
+
+
+for (let i = 0; i < array_task1_color.length; i++) {
+    console.log(`kolor :  ${array_task1_color[i].charAt(0).toUpperCase() + array_task1_color[i].slice(1)}`);
+}
+
+
+
+
+console.log(' ')
+console.log('ZADANIE Z TABLIC 5 i metoda slice ')
+
+
+console.log(array_task1_cars)
+array_task1_cars.shift()
+array_task1_cars.shift()
+array_task1_cars.pop()
+array_task1_cars.pop()
+array_task1_cars.pop()
+array_task1_cars.push('Nissan', 'Dodge')
+
+console.log(array_task1_cars)
+
+if (3 <= array_task1_cars.length) {
+    console.log(`w tablicy jest WIĘCEJ niż 3 elementy ta wartość, to : ${array_task1_cars.length}  :)`)
+} else {
+    console.log(`w tablicy jest MNIEJ niż 3 elementy ${array_task1_cars.length}  :)`)
+}
+
+array_task1_cars.length > 3 ? console.log('Jest ok') : console.log('nie jest ok');
+
+
+if (array_task1_cars.includes('Dodge')) {
+    array_task1_cars.push('Mazda')
+    console.log(array_task1_cars)
+} else {
+    array_task1_cars.pop()
+    console.log(array_task1_cars)
+}
 
 
 
@@ -945,13 +1076,22 @@ console.log(tabel_course.in)
 
 
 
-
-// MATERIAŁ I ODCINEJ Z  TABLICAMI (Array)  metody na tablicach
-
-
+console.log(' ')
+console.log('ZADANIE Funkcje i wprowadzenie')
 
 
 
+// deklaracja funcki 
+// czesc()
+
+function czesc() {
+    console.log('cześć')
+}
+czesc()
+
+
+
+czesc()
 
 
 
@@ -959,6 +1099,173 @@ console.log(tabel_course.in)
 
 
 
+// wyrażenie funkcji
+const czesc1 = function () {
+    console.log('czesc1')
+}
+czesc1()
+
+
+
+
+
+// funkcja strzałkowa
+// w środku znajduje się argument
+function czesc3(params, params2, params3) {
+    console.log(params, params3)
+}
+// tutaj mamy parametr
+czesc3(`czesc3`, `kocharz` ,`kamil`)
+
+
+function suma(x,y=5,z=[]) {
+    console.log(z)
+    if (x < y){
+        // return
+        console.log(`if`)
+    } else {
+        console.log(z.map(element => element + (x + y)))
+    }
+    // console.log(x + y + z[])
+}
+
+suma(7, 6, [1,3,4])
+
+
+// funkcja anonimowa 
+console.log('')
+console.log('funkcja anonimowa')
+
+
+
+const heading = document.querySelector('h1')
+// nie jest wiadomo co robi ta funkcja 
+//  Jeżeli chcielibyśmy ją napisać na nowo, to nie mamy do niej dostępu i trzba by było napisać ją na nowo 
+
+heading.addEventListener('click', function() {
+    console.log('guzik !');
+})
+
+
+
+// funkcja strzałkowa 
+console.log('')
+console.log('funkcja strzałkowa')
+
+const test3 = (name5) => {
+    console.log(`Mam na imię ${name5}`)
+}
+test3(`Daniel`)
+
+
+const test4 = name6 => console.log(`Mam na imię ${name6}`)
+test4('Arek')
+
+
+
+function test5(name7) {
+    console.log(`Mam na imię ${name7}`)
+}
+test5('Kuba')
+
+
+
+const test6 = (name8, age4) => console.log(`Mam na imię : ${name8}, mam : ${age4} lat`)
+test6(`Michał`, 13)
+
+
+
+// const test7 = (num3, num4) => num3 * num4
+
+
+// funkcja i przypisywanie do nowej zmiennej 
+const test8 = (x, y) => {
+    return x + y
+}
+
+let wynik_test8 = test8(1,2)
+console.log(test8(3,4))
+
+
+
+
+//FUNKCJE domyślne parametry funkcji
+console.log('')
+console.log('FUNKCJE domyślne parametry funkcji ')
+
+
+// nfn Tworzy nam się funkcja strzałkowa 
+const hello = (name9 = `drogi użytkowniku`) => {
+    console.log(`Cześć ${name9}, jak się masz? `)
+}
+
+
+hello()
+hello('kaktus')
+
+
+const funkcja_dodaj = (x=5, y=5) => {
+    console.log(x + y)
+}
+
+funkcja_dodaj()
+funkcja_dodaj(10)
+funkcja_dodaj(10,10)
+
+
+
+
+
+
+
+
+//FUNKCJE operator rest
+console.log('')
+console.log('FUNKCJE operator rest ')
+
+//SPREAD
+const array_2 = [1,2,3,4,5,6,7,8,9]
+console.log(array_2)
+console.log(...array_2)
+
+
+//REST of all czyli wszystkie inne pozostałę 
+
+// wyciąga wszystko inne co zostało w a ni jest x,y , czyli pierwszą i drugą wartością, to przypisuje nam do tablicy z
+const numbers5 = (x,y, ...z) => {
+    console.log(x,y,z)
+    console.log(z)
+    console.log(z.map(el => el * 2))
+}
+
+numbers5(1,2,3,4,5,6,7,8,9,10,11,12,13,14)
+
+
+
+//FUNKCJE zakresy
+console.log('')
+console.log('FUNKCJE zakresy ')
+
+const zakresy = `Lisa`
+
+const zakresy2 = () => {
+    const zakresy = `Lili`
+    const age = 23
+    console.log(age)
+    console.log(`name w funkcji ${age}`)
+    console.log(zakresy)
+    console.log(`name w funkcji ${zakresy}`)
+
+    const zakres3 = () => {
+        
+    }
+    const zakres4 = () => {
+
+    }
+}
+zakresy2()
+
+console.log(`nazwa poza funkcją - ${zakresy}`)
 
 
 
