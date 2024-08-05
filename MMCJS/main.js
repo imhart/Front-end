@@ -1255,17 +1255,26 @@ const zakresy2 = () => {
     console.log(`name w funkcji ${age}`)
     console.log(zakresy)
     console.log(`name w funkcji ${zakresy}`)
-
+    
     const zakres3 = () => {
-        
+        console.log(`-----`)
+        food = 'pizza'
+        console.log(food)
+        console.log(`-----`)
     }
     const zakres4 = () => {
 
     }
+
+    test2()
 }
+console.log(` `)
 zakresy2()
 
+const function_zakres = zakresy2()
+console.log(`nazwa poza funkcją - ${zakresy2()}`)
 console.log(`nazwa poza funkcją - ${zakresy}`)
+
 
 
 
