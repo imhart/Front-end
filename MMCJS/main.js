@@ -1115,12 +1115,12 @@ function czesc3(params, params2, params3) {
     console.log(params, params3)
 }
 // tutaj mamy parametr
-czesc3(`czesc3`, `kocharz` ,`kamil`)
+czesc3(`czesc3`, `kocharz`, `kamil`)
 
 
-function suma(x,y=5,z=[]) {
+function suma(x, y = 5, z = []) {
     console.log(z)
-    if (x < y){
+    if (x < y) {
         // return
         console.log(`if`)
     } else {
@@ -1129,7 +1129,7 @@ function suma(x,y=5,z=[]) {
     // console.log(x + y + z[])
 }
 
-suma(7, 6, [1,3,4])
+suma(7, 6, [1, 3, 4])
 
 
 // funkcja anonimowa 
@@ -1142,7 +1142,7 @@ const heading = document.querySelector('h1')
 // nie jest wiadomo co robi ta funkcja 
 //  Jeżeli chcielibyśmy ją napisać na nowo, to nie mamy do niej dostępu i trzba by było napisać ją na nowo 
 
-heading.addEventListener('click', function() {
+heading.addEventListener('click', function () {
     console.log('guzik !');
 })
 
@@ -1183,8 +1183,8 @@ const test8 = (x, y) => {
     return x + y
 }
 
-let wynik_test8 = test8(1,2)
-console.log(test8(3,4))
+let wynik_test8 = test8(1, 2)
+console.log(test8(3, 4))
 
 
 
@@ -1204,13 +1204,13 @@ hello()
 hello('kaktus')
 
 
-const funkcja_dodaj = (x=5, y=5) => {
+const funkcja_dodaj = (x = 5, y = 5) => {
     console.log(x + y)
 }
 
 funkcja_dodaj()
 funkcja_dodaj(10)
-funkcja_dodaj(10,10)
+funkcja_dodaj(10, 10)
 
 
 
@@ -1224,7 +1224,7 @@ console.log('')
 console.log('FUNKCJE operator rest ')
 
 //SPREAD
-const array_2 = [1,2,3,4,5,6,7,8,9]
+const array_2 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 console.log(array_2)
 console.log(...array_2)
 
@@ -1232,13 +1232,13 @@ console.log(...array_2)
 //REST of all czyli wszystkie inne pozostałę 
 
 // wyciąga wszystko inne co zostało w a ni jest x,y , czyli pierwszą i drugą wartością, to przypisuje nam do tablicy z
-const numbers5 = (x,y, ...z) => {
-    console.log(x,y,z)
+const numbers5 = (x, y, ...z) => {
+    console.log(x, y, z)
     console.log(z)
     console.log(z.map(el => el * 2))
 }
 
-numbers5(1,2,3,4,5,6,7,8,9,10,11,12,13,14)
+numbers5(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
 
 
 
@@ -1249,31 +1249,38 @@ console.log('FUNKCJE zakresy ')
 const zakresy = `Lisa`
 
 const zakresy2 = () => {
-    const zakresy = `Lili`
-    const age = 23
-    console.log(age)
-    console.log(`name w funkcji ${age}`)
-    console.log(zakresy)
-    console.log(`name w funkcji ${zakresy}`)
-    
+    console.log(`RODZIC😎`)
+    console.log(`RODZIC😎`)
+
     const zakres3 = () => {
+        console.log(`DZIECKO`)
+        const zakresy = `Lili 💃`
+        const age = 23
+        console.log(age)
+        console.log(`name w funkcji ${age}`)
+        console.log(zakresy)
+        console.log(`name w funkcji ${zakresy}`)
         console.log(`-----`)
-        food = 'pizza'
+        food = 'pizza 🍕'
         console.log(food)
         console.log(`-----`)
+        console.log(`DZIECKO`)
     }
     const zakres4 = () => {
-
+        const apple = '🍎🍎🍎'
+        console.log(apple)
     }
 
-    test2()
+    zakres3()
+    zakres4()
 }
-console.log(` `)
 zakresy2()
+console.log(` `)
+// zakresy2()
 
-const function_zakres = zakresy2()
-console.log(`nazwa poza funkcją - ${zakresy2()}`)
-console.log(`nazwa poza funkcją - ${zakresy}`)
+// const function_zakres = zakresy2()
+// console.log(`nazwa poza funkcją - ${zakresy2()}`)
+// console.log(`nazwa poza funkcją - ${zakresy}`)
 
 
 
