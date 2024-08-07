@@ -1251,7 +1251,7 @@ const zakresy = `Lisa`
 const zakresy2 = () => {
     console.log(`RODZIC😎`)
     console.log(`RODZIC😎`)
-
+    
     const zakres3 = () => {
         console.log(`DZIECKO`)
         const zakresy = `Lili 💃`
@@ -1270,7 +1270,7 @@ const zakresy2 = () => {
         const apple = '🍎🍎🍎'
         console.log(apple)
     }
-
+    
     zakres3()
     zakres4()
 }
@@ -1283,11 +1283,366 @@ console.log(` `)
 // console.log(`nazwa poza funkcją - ${zakresy}`)
 
 
+//FUNKCJE forEach i callBack
+console.log('')
+console.log('FUNKCJE forEach i callBack')
+
+console.log(array_1)
+array_1.shift()
+console.log(array_1)
+console.log(array_task1_cars)
+
+// Za pomocą map w funkcji możemy zwiększać napisy w naszej tablicy, forEach się do tego nie nadaje 
+array_1.forEach(multiplication_function => console.log(multiplication_function * multiplication_function))
+const big_array_task1_cars = array_task1_cars.map(name10 => name10.toUpperCase())
+console.log(big_array_task1_cars)
+
+const show_big_array_task1_cars = (name11) => {
+    console.log(name11.toUpperCase());
+}
+
+// callback zwraca nam funkcję do danej ablicy i za pomocą foreach.
+array_task1_cars.forEach(show_big_array_task1_cars)
+console.log('-------')
+console.log('przykład powyżej z callback, a poniżej w jednej lini za pomocą forEach')
+console.log('-------')
+array_task1_cars.forEach(element1 => console.log(element1.toUpperCase()))
 
 
 
 
 
+
+//FUNKCJE FUNCKJE ZADANIE 1
+console.log('')
+console.log('FUNKCJE FUNCKJE ZADANIE 1')
+
+let score
+
+const add_score = (xx,yy) => {
+    score = xx + yy
+    
+    if (score % 2 === 0) {
+        eventMSG()
+    } else {
+        oddMSG()
+    } 
+    
+}
+
+const eventMSG = () => {
+    console.log(`Liczba ${score} jest parzysta`)
+}
+const oddMSG = () => {
+    console.log(`Liczba ${score} jest NIE parzysta`)
+}
+
+add_score(2, 5)
+console.log(score)
+
+
+
+
+//FUNKCJE FUNCKJE ZADANIE 2
+console.log('')
+console.log('FUNKCJE FUNCKJE ZADANIE 2')
+console.log('zmiana ze stopni celsjusza na fahrenheita')
+
+let celsius
+let temp
+
+
+const farhrenheit = (c) => {
+    celsius = c
+    temp = celsius * 1.8 + 32
+    
+    console.log(`${celsius} C = ${temp} F`);
+}
+
+farhrenheit(20)
+
+let celsius2
+let temp2
+
+const farhrenheit2 = (cc) => {
+    celsius2 = cc
+    temp2 = celsius2 * 1.8 + 32
+    
+    console.log(`${celsius2} C = ${temp2} F`)
+}
+
+farhrenheit2(50)
+
+
+
+
+
+//FUNKCJE FUNCKJE ZADANIE 3
+console.log('')
+console.log('FUNKCJE FUNCKJE ZADANIE 3')
+
+const numb6 = 10
+const numbers6 = []
+
+for (let i = 0; i <= numb6; i++) {
+    numbers6.push(i)
+}
+
+console.log(numbers6)
+
+const checkNumbers = (number6) => {
+    if (number6 % 3 === 0 && number6 !==0) {
+        console.log(`${number6} jest podzielna przez 3`);
+    } else {
+        console.log(`${number6} NIE jest ta liczba podzielna przez 3`);
+    }
+}
+numbers6.forEach(checkNumbers)
+
+
+
+
+function log(params) {
+    console.log(params)
+}
+
+
+
+// DOM, WINDOW, DOCUMENT
+console.log('')
+console.log(' DOM, WINDOW, DOCUMENT zaczynamy czym jest api')
+// API- Interfejs programowania aplikacji
+
+// DOM - Obiektowy model dokumentu - sposób reprezentacji
+// złożonych dokumentów XML i HTML w postaci modelu obiektowego.
+// Model ten jest niezależny od platformy i języka programowania.
+// Wszystkie zmiany w html, js, css na żywo 
+
+// window - obiekt globalny cała nasza strona, wszystkie nasze dokumentu elementy
+
+
+console.log(window)
+ window.console.log(`czesc`)
+
+
+// pobieranie elementów ze strony
+
+// getElementById
+log('')
+console.log('getElementById')
+
+const get_id = document.getElementById('item')
+console.log(get_id)
+
+// getElementByTagName
+log('')
+console.log('getElementByTagName')
+
+const get_tag_ul = document.getElementsByTagName('ul')
+console.log(get_tag_ul)
+const get_tag_li = document.getElementsByTagName('li')
+log(get_tag_li)
+
+
+
+// getElementsByClass Name
+log('')
+console.log('getElementsByClass Name')
+const get_tag_class = document.getElementsByClassName('test')
+log(get_tag_class)
+
+
+// querySelector ES6
+log('');
+console.log('querySelector ES6');
+
+const  get_querySelector = document.querySelector('.test');
+console.log(get_querySelector);
+const  get_querySelector2 = document.querySelector('#item');
+console.log(get_querySelector2);
+const  get_querySelector3 = document.querySelector('ul li');
+console.log(get_querySelector3);
+const  get_querySelector4 = document.querySelector('ul');
+console.log(get_querySelector4);
+// za pomocą odwołania się możemy sprawdzić jakie elementy są w ul i jakie mamy tam li
+const  get_querySelector5 = get_querySelector4.querySelector('li');
+console.log(get_querySelector5);
+
+
+const  get_querySelector6 = document.querySelector('li.test');
+console.log(get_querySelector6);
+
+
+// querySelectorAL ES6
+// Dla All jest wypisywane wszystkie elementy, a dla zwykłego querySelector wypisywany jest pierwszy, którego napotka
+log('')
+console.log('querySelectorALL ES6')
+
+const get_querySelectorALL = document.querySelectorAll('li.test')
+log(get_querySelectorALL)
+
+
+// Zywe kolekcje, czyli qSA vs getElementsByTag / className
+// Dodawanie dynamiczne możemy tylko dodawać z querySelector
+const newLi = document.createElement('li')
+get_querySelector4.appendChild(newLi).textContent = '🪂'
+
+
+
+// 
+
+
+// zadanie z querySelector ES6
+log('')
+console.log('zadanie z querySelector')
+
+const headingg = document.querySelectorAll('h1')
+log(headingg)
+const allP = document.querySelectorAll('p:not(div.test p)') // zwracam uwagę na słowo 'All' 😉
+log(allP)
+const testDiv = document.querySelector('div.test')
+log(testDiv)
+const pInsideDiv = testDiv.querySelector('#item2')
+log(pInsideDiv)
+
+
+
+// DOM, WINDOW, DOCUMENT dodawanie elementów na stronie  ES6
+log('')
+console.log(' DOM, WINDOW, DOCUMENT dodawanie elementów na stronie ')
+
+
+const new_ul_in_HTML = document.createElement('ul')
+
+const new_li_in_HTML = document.createElement('li')
+new_li_in_HTML.textContent = 'cześć'
+
+document.body.appendChild(new_ul_in_HTML)
+new_ul_in_HTML.appendChild(new_li_in_HTML)
+
+
+
+const new_div_in_HTML = document.createElement('div')
+const new_p_in_HTML = document.createElement('p')
+const new_h2_in_html = document.createElement('h2')
+
+new_p_in_HTML.textContent = 'nowy p'
+new_h2_in_html.textContent = 'nowy h2'
+
+document.body.appendChild(new_div_in_HTML)
+
+new_div_in_HTML.appendChild(new_p_in_HTML)
+
+new_div_in_HTML.append(new_p_in_HTML, new_h2_in_html, new_p_in_HTML)
+
+
+
+
+
+// DOM, WINDOW, DOCUMENT usuwanie dodawanie  ES6
+log('')
+console.log(' DOM, WINDOW, DOCUMENT  usuwanie')
+
+// usuwanie dziecka
+new_div_in_HTML.removeChild(new_h2_in_html)
+
+// usuwanie całego rodzica, na elemencie, który chcemy usunąć
+new_p_in_HTML.remove()
+
+
+
+
+
+
+
+// DOM, WINDOW, DOCUMENT dodawanie elementów na stronie  ES6
+log('')
+console.log(' DOM, WINDOW, DOCUMENT texContent, innerText, o')
+
+const button2 = document.querySelector('button.button2')
+const body2 = document.querySelector('body')
+// button2.innerHTML = ` 123 `
+
+// button2.outerHTML = ` 123 `
+
+// Zmienia nam całą zawartość boddy na ten tekst
+// document.body.innerHTML = ` 123 `
+
+// Zmienia tekst w przycisku i może zmienić zawartość przyciski
+// button2.innerHTML = `<li> 123 </li>`
+
+//dodaje wszystko jako teks, nie zmienia struktury przycisku
+// button2.innerText = `<li> 1234 </li>`
+
+// wypisuje nam tylko tekst 
+console.log(button2.innerText);
+// wypisuje nam całą zawartość, nawet jak będą klasy, wypisze je jako tekst
+console.log(button2.textContent);
+
+// wypisuje nam tylko tekst 
+console.log(body2.innerText);
+// wypisuje nam całą zawartość, nawet jak będą klasy, wypisze je jako tekst
+console.log(body2.textContent);
+
+
+
+
+
+
+// DOM, WINDOW, DOCUMENT addEventLisener  ES6
+log('')
+console.log(' DOM, WINDOW, DOCUMENT   addEventLisener')
+
+
+
+
+
+// mouseEvent wskazuje tylko na kursor, na mysz.
+
+// pointerEvent wskazuje na pointer – wskaźnik.
+// Na desktopie jest to kursor, na urządzeniu z ekranem
+// dotykowym będzie to nasz palec / urządzenia typu 
+// Apple Pencil.
+
+
+
+log('')
+console.log(' e czyli event')
+const click2 = (e) => {
+    console.log(e)
+    console.log(e.target)
+    console.log(e.target.classList)
+    console.log(e.target.offsetTop)
+    console.log(e.target.offsetLeft)
+}
+
+button2.addEventListener('click', click2 )
+
+
+
+// DOM, WINDOW, DOCUMENT  Bubbling & capturing
+log('')
+console.log(' DOM, WINDOW, DOCUMENT   Bubbling & capturing')
+
+const lime = document.querySelector('div.circle_green')
+const blue = document.querySelector('div.ciecle_blue')
+const gold = document.querySelector('div.circle_gold')
+
+const infoLime = () => {
+  console.log('%clime', 'color: lime;')
+}
+
+const infoBlue = () => {
+  console.log('%cBlue', 'color: blue;')
+}
+
+const infoGold = () => {
+  console.log('%cGold', 'color: gold;')
+}
+
+lime.addEventListener('click', infoLime)
+blue.addEventListener('click', infoBlue)
+gold.addEventListener('click', infoGold)
 
 
 
