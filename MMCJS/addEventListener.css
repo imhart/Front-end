@@ -1,0 +1,22 @@
+body {
+    background-color: #1a1d30;
+}
+
+
+
+.b {
+    background: linear-gradient(#1a1d30, #1a1d30) padding-box,
+    linear-gradient(to right, rgb(238, 255, 0), rgb(255, 0, 0)) border-box;
+    border-radius: 50px;
+    border: 2px solid transparent;
+
+    color: white;
+    padding: 20px;
+    margin: 20px;
+    font-size: 15px;
+    font-weight: 700;
+    float: left;
+}
+
+
+

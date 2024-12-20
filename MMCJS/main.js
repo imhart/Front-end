@@ -1251,7 +1251,7 @@ const zakresy = `Lisa`
 const zakresy2 = () => {
     console.log(`RODZIC😎`)
     console.log(`RODZIC😎`)
-    
+
     const zakres3 = () => {
         console.log(`DZIECKO`)
         const zakresy = `Lili 💃`
@@ -1270,7 +1270,7 @@ const zakresy2 = () => {
         const apple = '🍎🍎🍎'
         console.log(apple)
     }
-    
+
     zakres3()
     zakres4()
 }
@@ -1319,15 +1319,15 @@ console.log('FUNKCJE FUNCKJE ZADANIE 1')
 
 let score
 
-const add_score = (xx,yy) => {
+const add_score = (xx, yy) => {
     score = xx + yy
-    
+
     if (score % 2 === 0) {
         eventMSG()
     } else {
         oddMSG()
-    } 
-    
+    }
+
 }
 
 const eventMSG = () => {
@@ -1355,7 +1355,7 @@ let temp
 const farhrenheit = (c) => {
     celsius = c
     temp = celsius * 1.8 + 32
-    
+
     console.log(`${celsius} C = ${temp} F`);
 }
 
@@ -1367,7 +1367,7 @@ let temp2
 const farhrenheit2 = (cc) => {
     celsius2 = cc
     temp2 = celsius2 * 1.8 + 32
-    
+
     console.log(`${celsius2} C = ${temp2} F`)
 }
 
@@ -1391,7 +1391,7 @@ for (let i = 0; i <= numb6; i++) {
 console.log(numbers6)
 
 const checkNumbers = (number6) => {
-    if (number6 % 3 === 0 && number6 !==0) {
+    if (number6 % 3 === 0 && number6 !== 0) {
         console.log(`${number6} jest podzielna przez 3`);
     } else {
         console.log(`${number6} NIE jest ta liczba podzielna przez 3`);
@@ -1422,7 +1422,7 @@ console.log(' DOM, WINDOW, DOCUMENT zaczynamy czym jest api')
 
 
 console.log(window)
- window.console.log(`czesc`)
+window.console.log(`czesc`)
 
 
 // pobieranie elementów ze strony
@@ -1456,20 +1456,20 @@ log(get_tag_class)
 log('');
 console.log('querySelector ES6');
 
-const  get_querySelector = document.querySelector('.test');
+const get_querySelector = document.querySelector('.test');
 console.log(get_querySelector);
-const  get_querySelector2 = document.querySelector('#item');
+const get_querySelector2 = document.querySelector('#item');
 console.log(get_querySelector2);
-const  get_querySelector3 = document.querySelector('ul li');
+const get_querySelector3 = document.querySelector('ul li');
 console.log(get_querySelector3);
-const  get_querySelector4 = document.querySelector('ul');
+const get_querySelector4 = document.querySelector('ul');
 console.log(get_querySelector4);
 // za pomocą odwołania się możemy sprawdzić jakie elementy są w ul i jakie mamy tam li
-const  get_querySelector5 = get_querySelector4.querySelector('li');
+const get_querySelector5 = get_querySelector4.querySelector('li');
 console.log(get_querySelector5);
 
 
-const  get_querySelector6 = document.querySelector('li.test');
+const get_querySelector6 = document.querySelector('li.test');
 console.log(get_querySelector6);
 
 
@@ -1585,6 +1585,10 @@ console.log(body2.innerText);
 console.log(body2.textContent);
 
 
+const one_click = (e) => {
+    button2 = e
+
+}
 
 
 
@@ -1616,33 +1620,180 @@ const click2 = (e) => {
     console.log(e.target.offsetLeft)
 }
 
-button2.addEventListener('click', click2 )
+button2.addEventListener('click', click2)
 
 
 
 // DOM, WINDOW, DOCUMENT  Bubbling & capturing
-log('')
-console.log(' DOM, WINDOW, DOCUMENT   Bubbling & capturing')
 
-const lime = document.querySelector('div.circle_green')
-const blue = document.querySelector('div.ciecle_blue')
-const gold = document.querySelector('div.circle_gold')
+// Za pomocą tego możemy stprawdzić strukturę
+// i bombelkowanie w jakiem kolejności jest to na stronie
+
+// stopPropagation pomaga nam wyłączyć pozostałe elementy i jest tylko aktywny ten, który kliknęliśmy 
+
+log('')
+console.log('DOM, WINDOW, DOCUMENT   Bubbling & capturing')
+
+const lime = document.querySelector('.circle_green')
+const blue = document.querySelector('.circle_blue')
+const gold = document.querySelector('.circle_gold')
+const red = document.querySelector('.circle_red')
+
+// Dodajemy sobie wcześniej klasy i nowego div do diva gold, żeby szczytywało nam wszystkie elementy, razem z red_circle
+gold.appendChild(new_div_in_HTML)
+new_div_in_HTML.classList.add('circle', 'circle_red')
+const all_Circle = document.querySelectorAll('.circle')
+
 
 const infoLime = () => {
-  console.log('%clime', 'color: lime;')
+    console.log('%clime', 'color: lime;')
 }
 
 const infoBlue = () => {
-  console.log('%cBlue', 'color: blue;')
+    console.log('%cBlue', 'color: royalblue;')
 }
 
-const infoGold = () => {
-  console.log('%cGold', 'color: gold;')
+
+// za pomocą e czyli event  zmieniam wartość na stop 
+// propagation, czyli nie odczytuje wszystkiego i całej 
+// struktury w której ona jest, ale tylko ten element, 
+// główny 
+const infoGold = (e) => {
+    // Jeżeli nie ma stopPropagation, to można jeszcze odczytać deklaracje zdarzeń
+    e.stopPropagation()
+    console.log('%cGold', 'color: gold; text-transform: uppercase')
 }
 
-lime.addEventListener('click', infoLime)
-blue.addEventListener('click', infoBlue)
-gold.addEventListener('click', infoGold)
+// to jest ta delegacja  capture
+lime.addEventListener('click', infoLime, { capture: false })// lime.addEventListener('click', infoLime, {capture: true})
+blue.addEventListener('click', infoBlue, { capture: false })
+gold.addEventListener('click', infoGold, { capture: false })
+
+// Wypisuje nam całą zawartość wyszukiwanego koła 
+all_Circle.forEach(circle22 => circle22.addEventListener('click', () => console.log(circle22)))
+
+console.log(all_Circle.length)
+
+
+
+// Wypisuje nam test jak klikniemy coś z klasą lime
+
+// lime.addEventListener('click', () => console.log('test'))
+
+lime.addEventListener('click', e => {
+    if (e.target.matches(`.zdarzenie`))
+        console.log('Znaleziono deklaracje zdarzeń')
+})
+
+
+
+// DELEGACJA ZDARZEŃ
+log(` `)
+log(`DELEGACJA ZDARZEŃ`)
+
+const lime2 = document.querySelector('.circle_green2')
+
+lime2.addEventListener('click', e => {
+    if (e.target.matches(`.zdarzenie2`)) {
+        console.log('Znaleziono deklaracje zdarzeń')
+    }
+
+    // Albo jeszcze tak można zrobić 
+    // if (e.target.classList.contains(`zdarzenie2`)){
+    //     console.log('Znaleziono deklaracje zdarzeń')
+    //     console.log('🪲')
+    // }
+
+})
+
+
+// Style js
+log(` `)
+log(` STYLE JS`)
+
+const style_p = document.querySelector('p.styl_js')
+style_p.style.color = 'white'
+
+
+// nie działa na metodzie querySelector jak jest tylko jedna klasa 
+
+// const style_p2 = document.querySelectorAll('p.styl_js2')
+// style_p2.style.color = 'white'
+
+
+// add , remove toggle class
+log(` `)
+log(` add , remove toggle class`)
+
+
+
+// Data 
+log(` `)
+log(` STYLE JS`)
+
+const button_toggle = document.querySelector('button#button_toggle')
+
+button_toggle.addEventListener('click', e => {
+    console.log(e.target.dataset.number)
+    // console.log(e.target.dataset.state)
+    e.target.textContent = e.target.dataset.state == 0 ? e.target.dataset.text_close : e.target.dataset.text_open
+    e.target.dataset.state = e.target.dataset.state == 0 ? 1 : 0
+})
+
+// druga opcja napisania tego zadania
+
+//   if (e.target.dataset.state == 0) {
+//       e.target.textContent = e.target.dataset.text_close
+//       // e.target.dataset.state = 1
+//     } else {
+//         e.target.textContent = e.target.dataset.text_open
+//         // e.target.dataset.state = 0
+//     }
+
+
+// btn.forEach(btnf => btnf.addEventListener('click', () => {
+//     btn.forEach(element => {
+//         element.style.color = ""
+//         element.style.backgroundColor = ""
+//     })
+//     btnMeesage(btnf)
+//     console.log(btnf)
+// }))
+
+
+
+// POZOSTAŁE   setTime i setInterval 
+log(` `)
+log(` POZOSTAŁE  1#  setTime i setInterval`)
+
+
+const burger = () => {
+    console.log('🍔');
+}
+
+// Wypisze pojedyńczą funkcję z opóźnieniem co 1s 
+setTimeout(burger, 1000)
+
+// przy setInerval powtarza wykonanie się funkcji co wyznaczony czas, będzie się tak wykonywało co sekundę 
+// setInterval(burger, 1000)
+
+
+// jeżeli mamy coś dalej to program idzie dalej,a później po sekundzie wyświetli burgera
+console.log('🍔');
+
+
+
+log(` `)
+log(` POZOSTAŁE  2#  strict mode`)
+
+'use strict'
+
+// jeżeli nie jest zedfiniowane, to pokazuje błąd 
+// tak jak w przykładzie poniżej 
+// log(tabel_number_test3)
+
+
+//   taka blokada , że nie będzie nam działała funkcja , albo zmienna jak jej nie użyjemy 
 
 
 
@@ -1652,11 +1803,285 @@ gold.addEventListener('click', infoGold)
 
 
 
+log(` `)
+log(` POZOSTAŁE  3#  alert, confirm & promt`)
+
+// alert('cześć')
+
+
+
+// blokuje nam stronę i nie widać zawartości strony
+// confirm('%cpizza', 'color: red')
+
+// komunikat z możliwością wpisania 
+// const info = prompt('Cześć, jak masz na imię' )
+
+// console.log(`Cześć ${info}`)
+
+
+console.log(1 - - `2` + `2`)
+
+console.log(+ '2' + 1)
+
+console.log(2 + '2')
+
+console.log(+ 'hello' + + ' hi')
+
+console.log('hello' + + ' hi')
+
+console.log('hello' + ' hi')
+
+
+log(` `)
+log(` POZOSTAŁE  4#  Obiekt Math`)
+
+
+
+// Czas uniksowy (Unix time)
+var datee = new Date(1723432314 * 1000);
+
+var hours = datee.getHours();
+var minutes = datee.getMinutes();
+var seconds = datee.getSeconds();
+
+// console.log(datee.toLocaleFormat("h:mm:ss"))
+console.log(hours)
+console.log(minutes)
+console.log(seconds)
+
+
+const feels_like = Math.round(18.19)
+console.log(feels_like)
+
+icon = ['https://www.espectro.pw/assets/pogoda/images/clear.png']
+
+console.log(icon)
+
+// https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
 
 
 
 
 
 
+const get_data_api = (adres) => {
+
+    fetch(adres).then(
+        response => response.json()).then(
+            json => {
+                if (json.list != undefined) {
+                    set_4_hours(json)
+                } else {
+                    set_DOM_from_api(json)
+                }
+                // console.log(link_do_obrazka)
+            }
+        )
+}
+
+const set_DOM_from_api = (json) => {
+    console.log(json)
+    json.main.temp = Math.round(json.main.temp)
+    document.querySelector('.section1 img').setAttribute('src', 'https://openweathermap.org/img/wn/' + json.weather[0].icon + '@2x.png')
+    document.querySelector('.temp').textContent = '' + json.main.temp + '°C '
+    document.querySelector('.weather').textContent = json.weather[0].description
+    document.querySelector('.wind').textContent = 'prędkość wiatru ' + json.wind.speed + 'm/s'
+    document.querySelector('.humidity').textContent = 'Wilgotność ' + json.main.humidity + ' %'
+    document.querySelector('.city_title').textContent = json.name
+    get_data_api(`https://api.openweathermap.org/data/2.5/forecast?lat=${json.coord.lat}&lon=${json.coord.lon}&units=metric&cnt=4&lang=pl&appid=${APIKey}`)
+}
+
+const set_4_hours = (json) => {
+    console.log(json)
+    console.log(json.list[0].dt_txt)
+
+    let box_one_houers = document.querySelector('.box_houers')
+    let box_list = document.querySelector('.box_list')
+
+
+
+    console.log(json.city.coord)
+    console.log(json.city.name)
+    
+    // Praca domowa 
+    // Wartość defaltowa, żeby na początku zawsze spisywało Olsztyn, a później żeby wstawiało Warszwę po wpisaniu i zamieniło temperatury na ostatnie 4 pomiary. 
+
+    // (document.querySelector('.box_list').childElementCount) 
+    if (box_list.childElementCount > 0) {
+        box_list.innerHTML= ''
+}
+
+
+    json.list.forEach(element => {
+        let box = box_one_houers.cloneNode(true)
+        let data = new Date(element.dt * 1000);
+        let hours = data.getHours();
+        element.main.temp = Math.round(element.main.temp)
+        box.setAttribute('style', ' ')
+        box.querySelector('.foto2').setAttribute('src', 'https://openweathermap.org/img/wn/' + element.weather[0].icon + '@2x.png')
+        box.querySelector('.data2').textContent = hours + ':00'
+        box.querySelector('.temp2').textContent = 'Temperatura  ' + element.main.temp + '°C '
+        box.querySelector('.weather2').textContent = element.weather[0].description
+        box.querySelector('.humidity2').textContent = 'Wiatr ' + element.wind.speed + 'm/s'
+        box.querySelector('.wind2').textContent = ' Wilgotność ' + element.main.humidity + ''
+        box_list.append(box)
+    })
+}
+
+// const bt2 = document.querySelector('button:nth-of-type(2)')
+// const bt3 = document.querySelector('button:nth-of-type(3)')
+
+// console.log(bt1, bt2, bt3);
+
+
+// function btnMsg(e) {
+//     console.log(`kliknięto ${e.target.textContent} ! 😃😃😃😃`)
+// }
+
+// bt1.addEventListener('click', btnMsg )
+
+
+
+
+
+
+// querySelector('city_button').textContent =  
+
+
+
+// var minutes = datee.getMinutes();
+// let datee = new Date(1723432314 * 1000);
+
+// let hours = datee.getHours();
+
+
+// document.body.appendChild(new_ul_in_HTML)
+// new_ul_in_HTML.appendChild(new_li_in_HTML)
+
+// const checkNumbers = (number6) => {
+//     if (number6 % 3 === 0 && number6 !== 0) {
+//         console.log(`${number6} jest podzielna przez 3`);
+//     } else {
+//         console.log(`${number6} NIE jest ta liczba podzielna przez 3`);
+//     }
+// }
+// numbers6.forEach(checkNumbers)
+
+
+const APIKey = 'a56dab40b2f3c5ac377dda3c11396697'
+let json
+
+
+
+
+
+document.querySelector('.city_button').addEventListener('click', e => {
+    if (document.querySelector('.city_input').value.length >= 3) {
+        get_data_api(`https://api.openweathermap.org/data/2.5/weather?q=${document.querySelector('.city_input').value}&units=metric&lang=pl&appid=${APIKey}`)
+    }
+})
+
+
+// dla wciśnięcie entera
+document.querySelector('.city_input').addEventListener('keypress', e => {
+    if (e.key ==="Enter") {
+        if (document.querySelector('.city_input').value.length >= 3) {
+            get_data_api(`https://api.openweathermap.org/data/2.5/weather?q=${document.querySelector('.city_input').value}&units=metric&lang=pl&appid=${APIKey}`)
+        }
+    }
+})
+// var input = document.getElementById("myInput");
+// input.addEventListener("keypress", function(event) {
+//   if (event.key === "Enter") {
+//     event.preventDefault();
+//     document.getElementById("myBtn").click();
+//   }
+// });
+
+
+
+// read defoult city
+get_data_api(`https://api.openweathermap.org/data/2.5/weather?q=olsztyn&units=metric&lang=pl&appid=${APIKey}`)
+
+
+
+
+let todo_input
+let error_info
+let add_btn
+let ul_list
+let create_task
+
+// Wywoływanie naszych funkcji
+const main_todo_list = () => {
+    prepare_DOM_elements()
+    prepare_DOM_events()
+}
+
+// pobieranie wszystkich elementów
+const prepare_DOM_elements = () => {
+  todo_input = document.querySelector('.todo_input')
+  error_info = document.querySelector('.error_info')
+  add_btn = document.querySelector('.btn_add')
+  ul_list = document.querySelector('.todo_list ul')
+}
+
+// nadawanie wysłuchwania
+const prepare_DOM_events = () => {
+    add_btn.addEventListener('click', add_New_Task)
+}
+
+
+/*
+
+1. tworzenie nowego elementu  (li)
+2. Dodawanie nowego elementu do ul listy
+3. funkcja odpalana na click w przycisku ADD
+4. Przechwytuje treść z input i umiwszcza go w nowo utworzonym LI
+5. Funkcja nie doda do listy pustego 'to_do_lista
+
+*/ 
+
+const add_New_Task = () => {
+    if (todo_input.value !== '' ) {
+        create_task = document.querySelector('li')
+        create_task.classList.add('template_todo_element','li_todo','tools')
+        create_task.textContent = todo_input.value
+        ul_list.append(create_task)
+
+        add_element_todo_list()
+
+        todo_input.value = ''
+        error_info.textContent = ' '
+    } else {
+        error_info.textContent = "Wpisz treść zadania"
+    }
+}
+
+
+const add_element_todo_list = () => {
+    const tools_Panel = document.createElement('div')
+    tools_Panel.classList.add('')
+    create_task.append(tools_Panel)
+
+
+
+    const complete_btn = document.createElement('button')
+    complete_btn.classList.add('complete')
+    complete_btn.textContent = "COMPLETE"
+
+    const edit_btn = document.createElement('button')
+    edit_btn.classList.add('edit')
+    edit_btn.textContent = "COMPLETE"
+
+    const delete_btn = document.createElement('button')
+    delete_btn.classList.add('delete')
+    delete_btn.textContent = "COMPLETE"
+
+    tools_Panel.append(complete_btn, edit_btn, delete_btn)
+}
+
+// event, który odpowiada na wczytanie naszej stront
+document.addEventListener('DOMContentLoaded', main_todo_list)
 
 
