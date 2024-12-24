@@ -10,6 +10,8 @@ los = randint(1,100)
 odp = 10
 a = 0
 
+l = [1,2,3,4,5,"z",'x']   
+
 
 if not age > 12 or cash >= 30 and growth >=150:
     print("can come in")
@@ -53,6 +55,7 @@ while True:
 print("finish modulo")
  
 
+# zadanie z pętlami 
 print("zgadnij liczbę z przedziału 1-10")
 
 # for a in range(100):
@@ -66,4 +69,9 @@ while odp != los:
     elif odp < los:
         print("Niestety wylosowanna liczba jest WIĘKSZA od twojej")
 print("Wygrana, odgadłeś liczbę ! za ", a ," razem.")
+
+
+# listy
+
+
 
