@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorytm 1+1 - Optymalizacja</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        #output {
+            white-space: pre-wrap; /* Zachowuje formatowanie tekstu */
+            background: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Algorytm 1+1 - Optymalizacja funkcji f(x) = x²</h1>
+    <p>Kliknij przycisk, aby uruchomić algorytm:</p>
+    <button onclick="runAlgorithm()">Uruchom algorytm</button>
+    <div id="output">Wyniki pojawią się tutaj...</div>
+
+    <script>
+        // Funkcja celu, którą chcemy zminimalizować
+        function fitnessFunction(x) {
+            return x * x; // Przykład: f(x) = x^2
+        }
+
+        // Algorytm 1+1
+        function onePlusOneAlgorithm(iterations, mutationStrength) {
+            let output = ""; // Zmienna do przechowywania wyników
+            // 1. Inicjalizacja: losowe rozwiązanie początkowe
+            let currentSolution = Math.random() * 10 - 5; // Losowa wartość z zakresu [-5, 5]
+            let currentFitness = fitnessFunction(currentSolution);
+
+            output += `Początkowe rozwiązanie: x = ${currentSolution.toFixed(4)}, f(x) = ${currentFitness.toFixed(4)}\n`;
+
+            // 2. Główna pętla algorytmu
+            for (let i = 0; i < iterations; i++) {
+                // Mutacja: dodajemy losowy szum do aktualnego rozwiązania
+                let mutatedSolution = currentSolution + (Math.random() * 2 - 1) * mutationStrength;
+
+                // Obliczamy wartość funkcji celu dla zmutowanego rozwiązania
+                let mutatedFitness = fitnessFunction(mutatedSolution);
+
+                // Selekcja: porównujemy wartości funkcji celu
+                if (mutatedFitness < currentFitness) {
+                    // Jeśli zmutowane rozwiązanie jest lepsze, zastępujemy nim aktualne rozwiązanie
+                    currentSolution = mutatedSolution;
+                    currentFitness = mutatedFitness;
+                }
+
+                // Logowanie postępu co 100 iteracji
+                if (i % 100 === 0) {
+                    output += `Iteracja ${i}: x = ${currentSolution.toFixed(4)}, f(x) = ${currentFitness.toFixed(4)}\n`;
+                }
+            }
+
+            output += `Końcowe rozwiązanie: x = ${currentSolution.toFixed(4)}, f(x) = ${currentFitness.toFixed(4)}\n`;
+            return output;
+        }
+
+        // Funkcja uruchamiająca algorytm i wyświetlająca wyniki na stronie
+        function runAlgorithm() {
+            const iterations = 1000; // Liczba iteracji
+            const mutationStrength = 0.1; // Siła mutacji
+
+            // Uruchomienie algorytmu
+            const result = onePlusOneAlgorithm(iterations, mutationStrength);
+
+            // Wyświetlenie wyników na stronie
+            document.getElementById("output").textContent = result;
+        }
+    </script>
+</body>
+</html>
